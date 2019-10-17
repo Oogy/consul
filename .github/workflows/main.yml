@@ -20,14 +20,11 @@ jobs:
     - name: build Consul
       run: make tools && make linux
 
-    - name: Check GOPATH
-      run: ls $GOPATH
-        
     - name: check results
-      run: $GOPATH/bin/consul version
+      run: ls $GOPATH/bin
       
-    - name: Archive code coverage results
-      uses: actions/upload-artifact@v1
-      with:
-        name: consul-binary
-        path: $GOPATH/bin/consul
+    #- name: Archive code coverage results
+     # uses: actions/upload-artifact@v1
+      #with:
+       # name: consul-binary
+        #path: $GOPATH/bin/consul
