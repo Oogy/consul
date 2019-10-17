@@ -23,11 +23,11 @@ jobs:
     - name: Check GOPATH
       run: ls $GOPATH
         
-    #- name: check results
-      #run: ./consul version
+    - name: check results
+      run: $GOPATH/bin/consul version
       
-    #- name: Archive code coverage results
-      #uses: actions/upload-artifact@v1
-      #with:
-        #name: consul-binary
-        #path: consul
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v1
+      with:
+        name: consul-binary
+        path: $GOPATH/bin/consul
