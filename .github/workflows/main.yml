@@ -14,11 +14,17 @@ jobs:
       id: go
     
     - uses: actions/checkout@v1
-    - name: Run a one-line script
+    - name: Show dir for debug
       run: ls -la
   
     - name: build Consul
-      run: go build
+      run: make linux
       
     - name: check results
       run: ./consul version
+      
+    - name: Archive code coverage results
+      uses: actions/upload-artifact@v1
+      with:
+        name: consul-binary
+        path: consul
