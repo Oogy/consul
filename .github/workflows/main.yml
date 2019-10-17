@@ -4,10 +4,21 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
+
     steps:
+    - name: Set up Go 1.13
+      uses: actions/setup-go@v1
+      with:
+        go-version: 1.13
+      id: go
+    
     - uses: actions/checkout@v1
     - name: Run a one-line script
       run: ls -la
+  
+    - name: build Consul
+      run: go build
+      
+    - name: check results
+      run: ./consul version
