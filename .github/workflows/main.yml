@@ -12,14 +12,14 @@ jobs:
       with:
         go-version: 1.12
       id: go
-    
-    - uses: actions/checkout@v1
-    #- name: build Consul
-      #run: make tools && make linux
 
+    - uses: actions/checkout@v1
     - name: Set GOPATH
       run: export GOPATH=$PWD
-      
+    
+    - name: build Consul
+      run: make tools && make linux
+
     - name: Check GOPATH
       run: ls $GOPATH
         
