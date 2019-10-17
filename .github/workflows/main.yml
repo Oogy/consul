@@ -18,7 +18,7 @@ jobs:
       run: make tools && make linux
 
     - name: Show dir for debug
-      run: ls -la
+      run: echo $GOPATH
       
     - name: check results
       run: ./consul version
