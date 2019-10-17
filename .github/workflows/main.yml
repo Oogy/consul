@@ -25,4 +25,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: consul-binary
-        path: $GOPATH/bin/consul
+        path: /home/runner/work/consul/consul/bin/consul 
