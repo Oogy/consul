@@ -13,7 +13,7 @@ jobs:
         go-version: 1.12
       id: go
     
-    #- uses: actions/checkout@v1
+    - uses: actions/checkout@v1
     #- name: build Consul
       #run: make tools && make linux
 
