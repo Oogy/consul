@@ -14,11 +14,11 @@ jobs:
       id: go
     
     - uses: actions/checkout@v1
+    - name: build Consul
+      run: make tools && make linux
+
     - name: Show dir for debug
       run: ls -la
-  
-    - name: build Consul
-      run: make linux
       
     - name: check results
       run: ./consul version
