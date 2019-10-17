@@ -17,11 +17,11 @@ jobs:
     - name: Set GOPATH
       run: export GOPATH=$PWD
     
-    - name: build Consul
-      run: make tools && make linux
+    #- name: build Consul
+     # run: make tools && make linux
 
     - name: check results
-      run: ls $GOPATH/bin
+      run: pwd && echo $GOPATH && ls $GOPATH/bin 
       
     #- name: Archive code coverage results
      # uses: actions/upload-artifact@v1
