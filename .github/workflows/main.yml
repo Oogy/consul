@@ -14,14 +14,12 @@ jobs:
       id: go
 
     - uses: actions/checkout@v1
-    - name: Set GOPATH
-      run: export GOPATH=$PWD
     
-    #- name: build Consul
-     # run: make tools && make linux
+    - name: build Consul
+      run: export GOPATH=/home/runner/work/consul/consul && make tools && make linux
 
     - name: check results
-      run: pwd && echo $GOPATH && ls $GOPATH/bin 
+      run: export GOPATH=/home/runner/work/consul/consul && pwd && echo $GOPATH && ls $GOPATH/bin 
       
     #- name: Archive code coverage results
      # uses: actions/upload-artifact@v1
