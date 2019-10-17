@@ -7,21 +7,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Set up Go 1.13
+    - name: Set up Go 1.12
       uses: actions/setup-go@v1
       with:
-        go-version: 1.13
+        go-version: 1.12
       id: go
     
-    - uses: actions/checkout@v1
-    - name: build Consul
-      run: make tools && make linux
+    #- uses: actions/checkout@v1
+    #- name: build Consul
+      #run: make tools && make linux
 
     - name: Show dir for debug
-      run: echo $GOPATH
+      run: ls $GOPATH
       
-    - name: check results
-      run: ./consul version
+    #- name: check results
+      #run: ./consul version
       
     - name: Archive code coverage results
       uses: actions/upload-artifact@v1
